@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>メモ帳</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h1>メモ帳</h1>
+
+<form method="post" action="/">
+    <div>
+        今日のメモ<br>
+        <textarea id="memo" name="memo"></textarea>
+    </div>
+    <div>
+        <input type="submit" name="memo_button" value="メモ">
+    </div>
+</form>
+
+<h3>メモ一覧</h3>
+<table class="list">
+    <tr>
+        <th>日時</th>
+        <th>メモ</th>
+    </tr>
+    {% for row in res.list %}
+    <tr>
+        <td>{{row.created_at}}</td>
+        <td>{{row.memo}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div>
+    {% if res.previous_page %}
+    <a href="/?page={{res.previous_page}}"><前へ</a>
+    {% endif %}
+    {{res.page}}
+    {% if res.next_page %}
+    <a href="/?page={{res.next_page}}">次へ ></a>
+    {% endif %}
+</div>
+<footer>Copyright 2018 PyQ</footer>
+</body>
+</html>

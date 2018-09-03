@@ -1,0 +1,41 @@
+body {
+    width: 500px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea {
+    width: 100%;
+}
+
+table.list {
+    width: 100%;
+}
+
+table.list tr:nth-child(even)  {
+    background-color: lightgray;
+}
+
+table.list th {
+    padding: 0.5em;
+    background-color: darkgray;
+}
+
+table.list td {
+    padding: 0.5em;
+    vertical-align: top;
+    text-align: left;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    -webkit-appearance: button; /* Google Chrome用 */
+    width: 100px;
+    height: 30px;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
